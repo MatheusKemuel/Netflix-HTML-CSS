@@ -1,37 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="gradient-wrapper">
-        <header>
-            <figure>
-                <img src="https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAZge2REfWoSoWRs31izjUdgihldMUslSHTdfz-1aT4vVrgJuVByU92G8wIrBkwULJHWjM1khpzW0xWndigQFYViKFpy-pM6NZFnTKEPkpf9hcdSzCyzqBbcouyIpmgVLbodhaeyqCXaS.svg"
-                    alt="logo-netflix">
-            </figure>
-            <div class="header-left-items">
-                <select class="languages">
-                    <option value="Português">Português</option>
-                    <option value="Inglês">Inglês</option>
-                </select>
-                <a href="./pages/login.html" class="btn-entrar">Entrar</a>
-            </div>
-        </header>
-        <main>
-            <section class="hero">
-                <h1>Filmes, séries e muito <br> mais, sem limites</h1>
-                <h3>Planos a partir de R$ 20,90. Cancele quando quiser.</h3>
-                <a href="./pages/login.html" class="btn-hero">Entrar</a>
-            </section>
-        </main>
-    </div>
+    <header>
+        <figure>
+            <img src="https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAZge2REfWoSoWRs31izjUdgihldMUslSHTdfz-1aT4vVrgJuVByU92G8wIrBkwULJHWjM1khpzW0xWndigQFYViKFpy-pM6NZFnTKEPkpf9hcdSzCyzqBbcouyIpmgVLbodhaeyqCXaS.svg"
+                alt="logo-netflix">
+        </figure>
+    </header>
+
+
+
+
+    <main>
+        <section class="login">
+            <h1>Entrar</h1>
+            <form action="" class="form">
+                <article class="input-container">
+                    <div class="entryarea">
+                        <input type="text" id="email" class="entryarea-item" required>
+                        <div class="labelline">Digite seu email</div>
+                    </div>
+                    <div class="entryarea">
+                        <input type="password" id="senha" class="entryarea-item" required>
+                        <div class="labelline">Digite sua senha</div>
+                    </div>
+                </article>
+                <div>
+                    <input type="checkbox" name="remember" id="remember" class="checkbox">
+                    <label for="remember">Lembrar de mim</label>
+                </div>
+
+                <a href="./profiles.html" class="btn-login">
+                    Entrar
+                </a>
+
+            </form>
+            <a href="">Esqueceu a senha?</a>
+            <a href="">Ainda não possui conta?</a>
+        </section>
+    </main>
+
+
+
+
     <footer>
         <div class="footer-wrapper">
 
@@ -88,10 +107,6 @@
                     <li><a href="">Privacidade</a></li>
                     <li><a href="">Contate-nos</a></li>
                 </article>
-
-
-
-
             </ul>
             <article class="footer-copyright">
                 <p>&copy; 1997-2026 Netflix, Inc.</p>

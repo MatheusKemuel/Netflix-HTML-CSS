@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../assets/images/BR-en-20260727-TRIFECTA-perspective_03203fae-3956-4eac-88a7-a3632206b123_large.jpg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 40px;
+    font-weight: bold;
+    width: 100%;
+}
+
+header figure img {
+    width: 148px;
+}
+
+header a {
+    color: gray;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+.header-left-items {
+    display: flex;
+    gap: 15px;
+}
+
+header .header-left-items .languages {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.btn-entrar {
+    background-color: #ee0d18;
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: white;
+    transition: .4s;
+}
+
+.btn-entrar:hover {
+    background-color: #b6040d;
+}
+
+.hero {
+    max-width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 70px;
+}
+
+.hero h3 {
+    font-size: 23px;
+}
+
+.hero figure img {
+    width: 100%;
+}
+
+.btn-hero {
+    background-color: #ee0d18;
+    padding: 15px 50px;
+    border-radius: 5px;
+    color: white;
+    transition: .4s;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.btn-hero:hover {
+    background-color: #b6040d;
+}
+
+.gradient-wrapper {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

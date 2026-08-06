@@ -1,0 +1,58 @@
+footer {
+    background-color: #141414;
+}
+
+.footer-wrapper {
+    max-width: 980px;
+    margin: 0 auto 0 auto;
+    padding: 25px 0;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-size: 13px;
+}
+
+footer svg {
+    width: 36px;
+}
+
+footer a {
+    color: gray;
+    text-decoration: none;
+
+}
+
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+}
+
+
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    list-style: none;
+}
+
+.footer-links li {
+    width: 150px;
+}
+
+.footer-links-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links svg path {
+    fill: #fff;
+}
