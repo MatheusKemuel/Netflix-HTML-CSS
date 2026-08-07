@@ -9,14 +9,29 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-image: url(../assets/images/BR-en-20260727-TRIFECTA-perspective_03203fae-3956-4eac-88a7-a3632206b123_large.jpg);
+/* body {
+   
+} */
 
+.start {
+    background-image: url(../assets/images/BR-en-20260727-TRIFECTA-perspective_03203fae-3956-4eac-88a7-a3632206b123_large.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
+    margin-top: -85px;
 }
+
+.start::before {
+    content: "";
+    position: absolute;
+    height: 1000px;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
 
 header {
     display: flex;
@@ -25,6 +40,8 @@ header {
     padding: 20px 40px;
     font-weight: bold;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 header figure img {
@@ -69,12 +86,15 @@ header .header-left-items .languages {
     background-color: #b6040d;
 }
 
+main {
+    background-color: #000;
+}
+
 .hero {
-    max-width: 960px;
+    max-width: 900px;
     height: 100%;
     margin: 0 auto;
     position: relative;
-    top: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +109,11 @@ header .header-left-items .languages {
 }
 
 .hero h3 {
-    font-size: 23px;
+    font-size: 20px;
+}
+
+.hero p {
+    font-size: 17px;
 }
 
 .hero figure img {
@@ -98,23 +122,265 @@ header .header-left-items .languages {
 
 .btn-hero {
     background-color: #ee0d18;
-    padding: 15px 50px;
+    padding: 10px 50px;
     border-radius: 5px;
     color: white;
     transition: .4s;
     text-decoration: none;
     font-weight: bold;
-    font-size: xx-large;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
 }
 
 .btn-hero:hover {
     background-color: #b6040d;
 }
 
-.gradient-wrapper {
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 100vh;
+.form {
+    width: 100%;
+    padding: 0 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.input-container {
+    margin: 20px 0 40px 0;
+    width: 600px;
+}
+
+.input-container input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.trending {
+    position: relative;
+    background-color: #000;
+    color: white;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.trending-content {
+
+    margin: 0 auto;
+
+}
+
+.trending-content h2 {
+    font-size: 40px;
+}
+
+.movies {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    gap: 40px;
+    padding: 30px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.movie {
+    padding: 10px;
+    position: relative;
+    transition: .3s;
+}
+
+.movie span {
+    font-size: 125px;
+    color: #000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+}
+
+.movie img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.movie:hover {
+    scale: 1.1;
+}
+
+.motivos {
+    color: white;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.motivos-cards {
+    display: flex;
+    justify-content: center;
+    margin: 25px auto 0 auto;
+    gap: 20px;
+    padding: 0 40px;
+    max-width: 1400px;
+    flex-wrap: wrap;
+}
+
+.motivos h2 {
+    font-size: 40px;
+}
+
+
+
+.motivos-card {
+    background: #192146;
+    background: linear-gradient(175deg, rgba(25, 33, 70, 1) 5%, rgba(33, 14, 23, 1) 100%);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    text-align: left;
+    height: 300px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.motivos-card h3 {
+    font-size: 20px;
+}
+
+.motivos-card p {
+    font-size: 15px;
+    color: gray;
+    font-weight: bold;
+}
+
+.faq {
+    color: white;
+    margin: 80px auto 0;
+    max-width: 1400px;
+    padding: 0 40px;
+
+}
+
+.faq h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.faq-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.faq details {
+    width: 100%;
+    background-color: #2d2d2d;
+}
+
+.faq summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    padding: 25px 60px 25px 25px;
+    font-size: 24px;
+    font-weight: 400;
+    transition: .2s;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.faq summary:hover {
+    background-color: #414141;
+}
+
+.faq details p {
+    margin: 0;
+    padding: 0 25px 25px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+
+}
+
+.faq details[open] summary::after {
+    content: "×";
+}
+
+details summary {
+    font-size: xx-large;
+
+}
+
+.form-end {
+    max-width: 1400px;
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.p-form-end {
+    color: gray;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+.top-header {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+    align-items: center;
+    background: #5C32BF;
+    background: linear-gradient(86deg, rgba(92, 50, 191, 1) 5%, rgba(228, 9, 21, 1) 100%);
+    position: relative;
+    z-index: 4;
+    color: white;
+    font-size: small;
+}
+
+
+
+
+
+
+/* .curve-container {
+  
+
+} */
+
+
+
+
+
+
+
+
+/* RESPONSIVIDADE */
+
 
 @media (max-width: 1024px) {
     .hero h1 {
@@ -124,11 +390,21 @@ header .header-left-items .languages {
     .hero h3 {
         font-size: 15px;
     }
+
+    .input-container {
+        margin: 20px 0 40px 0;
+        width: 400px;
+    }
 }
 
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .input-container {
+        margin: 20px 0 40px 0;
+        width: 250px;
     }
 }
