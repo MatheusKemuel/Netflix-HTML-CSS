@@ -27,7 +27,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
     transition: .5s;
     animation: header-scroll linear both;
     animation-timeline: scroll();
@@ -304,66 +304,59 @@ nav ul li:hover {
 
 
 /* SLIDES */
-
 .media-container {
     position: relative;
-    overflow: visible;
 }
 
 .media-scroller {
-    position: relative;
-    padding: 0 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 0.25rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 3.5rem 3rem;
+    margin-block: -3.5rem;
+    scroll-padding-inline: 3rem;
 }
 
 .media-group {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 20%;
+    grid-auto-columns: 1fr;
     gap: 0.25rem;
-
-    position: absolute;
-    inset: 0;
-
-    visibility: hidden;
-    opacity: 0;
+    position: relative;
 }
 
-.media-scroller:not(:has(.media-group:target))
-.media-group:first-child {
-    position: relative;
-    visibility: visible;
-    opacity: 1;
+.media-info-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
-.media-group:target {
-    position: relative;
-    visibility: visible;
-    opacity: 1;
+.media-info2 {
+    padding: 30px;
+}
+.card-icons {
+    display: flex;
+    gap: 10px;
 }
 
 .media-card {
     position: relative;
+    min-width: 0;
     z-index: 1;
-    cursor: pointer;
-}
-
-.media-card:hover {
-    z-index: 100;
 }
 
 .media-element {
     position: relative;
-    border-radius: 0.25rem;
     overflow: hidden;
-
+    border-radius: 0.25rem;
+    background-color: #181818;
+    transform: scale(1);
+    transform-origin: center;
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
-}
-
-.media-card:hover .media-element {
-    transform: scale(1.4);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
 }
 
 .media-element img {
@@ -373,45 +366,80 @@ nav ul li:hover {
     object-fit: cover;
 }
 
+@media (hover: hover) {
+    .media-card:hover {
+        z-index: 100;
+    }
+
+    .media-card:hover .media-element {
+        transform: scale(1.35);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75);
+    }
+
+ 
+    .media-card:first-of-type .media-element {
+        transform-origin: left center;
+    }
+
+    .media-card:nth-last-of-type(1) .media-element {
+        transform-origin: right center;
+    }
+}
+
+
+
 .media-info {
-    width: 100%;
-    padding: 30px 12px 12px;
-
-    background: linear-gradient(
-        transparent,
-        rgba(0, 0, 0, .9)
-    );
-
+    padding: 12px;
+    background-color: #181818;
     opacity: 0;
-    transition: opacity .3s;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+        opacity 0.2s ease,
+        max-height 0.25s ease;
 }
 
 .media-card:hover .media-info {
     opacity: 1;
+    max-height: 120px;
 }
+
+.media-info h3 {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.media-info p {
+    color: #b3b3b3;
+    font-size: 0.8rem;
+}
+
+
 
 .next,
 .previous {
     display: none;
     align-items: center;
-    z-index: 101;
+    justify-content: center;
     position: absolute;
+    top: 0;
+    bottom: 0;
     width: 3rem;
     padding: 1rem;
     background: rgb(0 0 0 / 0);
     opacity: 0;
+    z-index: 200;
+    transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease;
 }
 
 .previous {
     left: 0;
-    top: 0;
-    bottom: 0;
 }
 
 .next {
     right: 0;
-    top: 0;
-    bottom: 0;
 }
 
 .media-group:first-child :where(.next, .previous) {
@@ -423,15 +451,15 @@ nav ul li:hover {
 }
 
 :where(.next, .previous):hover {
-    background: rgb(0 0 0 / 0.3);
+    background: rgb(0 0 0 / 0.45);
 }
 
-:where(.next, .previous)>svg {
+:where(.next, .previous) > svg {
+    width: 100%;
     transition: transform 75ms linear;
-    transform: scale(1);
 }
 
-:where(.next, .previous):hover>svg {
+:where(.next, .previous):hover > svg {
     transform: scale(1.2);
 }
 
@@ -439,30 +467,117 @@ nav ul li:hover {
     display: flex;
 }
 
-.media-scroller:has(:target:not(:first-child)) .media-group:first-of-type .next {
+.media-scroller:has(:target:not(:first-child))
+.media-group:first-of-type
+.next {
     display: none;
 }
 
 
-.media-group {
-    grid-auto-columns: 20%;
+
+
+.navigation-indicators {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 3px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
+.navigation-indicators > div {
+    width: 1rem;
+    height: 2px;
+    background: white;
+    opacity: 0.5;
+}
+
+.media-scroller:hover .navigation-indicators {
+    opacity: 1;
+}
+
+
+.navigation-indicators > div:first-child {
+    opacity: 1;
+}
+
+
+.media-scroller:has(.media-group:target)
+.navigation-indicators > div {
+    opacity: 0.5;
+}
+
+.media-group:nth-child(1):target
+~ .navigation-indicators > div:nth-child(1) {
+    opacity: 1;
+}
+
+.media-group:nth-child(2):target
+~ .navigation-indicators > div:nth-child(2) {
+    opacity: 1;
+}
+
+.media-group:nth-child(3):target
+~ .navigation-indicators > div:nth-child(3) {
+    opacity: 1;
+}
+
+
 @media (max-width: 1200px) {
-    .media-group {
-        grid-auto-columns: 25%;
+    .media-scroller {
+        padding-inline: 2.5rem;
+        scroll-padding-inline: 2.5rem;
+    }
+
+    .next,
+    .previous {
+        width: 2.5rem;
+        padding: 0.75rem;
+    }
+
+}
+
+@media (max-width: 1200px) and (hover: hover) {
+    .media-card:hover .media-element {
+        transform: scale(1.22);
     }
 }
 
 @media (max-width: 768px) {
+    .media-scroller {
+        padding-block: 2.5rem;
+        margin-block: -2.5rem;
+        padding-inline: 2rem;
+        scroll-padding-inline: 2rem;
+    }
+
     .media-group {
-        grid-auto-columns: 40%;
+        gap: 0.2rem;
+    }
+
+    .next,
+    .previous {
+        width: 2rem;
+        padding: 0.55rem;
+        opacity: 1;
+    }
+
+    .navigation-indicators {
+        right: 1rem;
     }
 }
 
 @media (max-width: 500px) {
-    .media-group {
-        grid-auto-columns: 70%;
+    .media-scroller {
+        padding-inline: 1.5rem;
+        scroll-padding-inline: 1.5rem;
+    }
+
+    .next,
+    .previous {
+        width: 1.5rem;
+        padding: 0.35rem;
     }
 }
 
@@ -470,6 +585,7 @@ nav ul li:hover {
     header {
         padding: 0;
     }
+
     .hero-btns {
         position: absolute;
         bottom: -70px;
@@ -526,6 +642,12 @@ nav ul li:hover {
     }
 }
 
+@media (max-width: 1200px) {
+    .media-group {
+        grid-auto-columns: 25%;
+    }
+}
+
 
 @media (max-width: 1350px) {
     .img-shadow img {
@@ -554,41 +676,6 @@ nav ul li:hover {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
