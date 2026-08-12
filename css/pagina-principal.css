@@ -305,85 +305,65 @@ nav ul li:hover {
 
 /* SLIDES */
 
-
 .media-container {
     position: relative;
     overflow: visible;
 }
 
 .media-scroller {
-    overflow: hidden;
-}
-
-.media-scroller,
-.media-group {
-    display: grid;
-    gap: 0.25rem;
-    grid-auto-flow: column;
-}
-
-.media-scroller {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 100%;
-    overflow-x: hidden;
-    overflow-y: visible;
-    scroll-behavior: smooth;
-    padding: 0 3rem;
-    gap: 20px;
-}
-
-.media-card {
     position: relative;
-    z-index: 1;
-    transition: transform .3s ease;
+    padding: 0 3rem;
 }
-
-.media-card:hover {
-    transform: scale(1.4);
-    z-index: 100;
-}
-
 
 .media-group {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 20%;
     gap: 0.25rem;
-    overflow: visible;
+
+    position: absolute;
+    inset: 0;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+.media-scroller:not(:has(.media-group:target))
+.media-group:first-child {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+}
+
+.media-group:target {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+}
+
+.media-card {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.media-card:hover {
+    z-index: 100;
 }
 
 .media-element {
     position: relative;
     border-radius: 0.25rem;
     overflow: hidden;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.media-element:hover {
-    transform: scale(1.08) translateY(-5px);
-    z-index: 10;
-    box-shadow: 0 10px 30px rgb(0 0 0 / 0.5);
-    cursor: pointer;
-}
-
-.media-info {
-    
-    width: 100%;
-    padding: 30px 12px 12px;
-    background: linear-gradient(
-        transparent,
-        rgba(0, 0, 0, .9)
-    );
-
-    opacity: 0;
-    transition: .3s;
-}
-
-.media-element:hover .media-info {
-    opacity: 1;
+.media-card:hover .media-element {
+    transform: scale(1.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
 }
 
 .media-element img {
@@ -393,16 +373,28 @@ nav ul li:hover {
     object-fit: cover;
 }
 
-.media-group {
-    grid-auto-columns: 20%;
+.media-info {
+    width: 100%;
+    padding: 30px 12px 12px;
 
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, .9)
+    );
+
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.media-card:hover .media-info {
+    opacity: 1;
 }
 
 .next,
 .previous {
     display: none;
     align-items: center;
-    z-index: 10;
+    z-index: 101;
     position: absolute;
     width: 3rem;
     padding: 1rem;
