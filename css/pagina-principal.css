@@ -27,7 +27,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
     transition: .5s;
     animation: header-scroll linear both;
     animation-timeline: scroll();
@@ -310,9 +310,19 @@ nav ul li:hover {
     overflow: visible;
 }
 
+.media-viewport {
+    overflow: hidden;
+}
+
 .media-scroller {
-    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+
+    scroll-behavior: smooth;
+
     padding: 0 3rem;
+    gap: 20px;
 }
 
 .media-group {
@@ -320,16 +330,9 @@ nav ul li:hover {
     grid-auto-flow: column;
     grid-auto-columns: 20%;
     gap: 0.25rem;
-
-    position: absolute;
-    inset: 0;
-
-    visibility: hidden;
-    opacity: 0;
 }
 
-.media-scroller:not(:has(.media-group:target))
-.media-group:first-child {
+.media-scroller:not(:has(.media-group:target)) .media-group:first-child {
     position: relative;
     visibility: visible;
     opacity: 1;
@@ -351,6 +354,20 @@ nav ul li:hover {
     z-index: 100;
 }
 
+.media-card:hover .media-element {
+    position: absolute;
+
+    width: 140%;
+
+    left: -20%;
+    top: -20%;
+
+    z-index: 100;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
+}
+
+
 .media-element {
     position: relative;
     border-radius: 0.25rem;
@@ -361,10 +378,6 @@ nav ul li:hover {
         box-shadow 0.3s ease;
 }
 
-.media-card:hover .media-element {
-    transform: scale(1.4);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
-}
 
 .media-element img {
     display: block;
@@ -377,10 +390,8 @@ nav ul li:hover {
     width: 100%;
     padding: 30px 12px 12px;
 
-    background: linear-gradient(
-        transparent,
-        rgba(0, 0, 0, .9)
-    );
+    background: linear-gradient(transparent,
+            rgba(0, 0, 0, .9));
 
     opacity: 0;
     transition: opacity .3s;
@@ -394,24 +405,26 @@ nav ul li:hover {
 .previous {
     display: none;
     align-items: center;
-    z-index: 101;
     position: absolute;
     width: 3rem;
     padding: 1rem;
-    background: rgb(0 0 0 / 0);
+    background: rgba(0, 0, 0, .15);
     opacity: 0;
+    z-index: 101;
 }
 
 .previous {
     left: 0;
     top: 0;
     bottom: 0;
+    width: 4rem;
 }
 
 .next {
     right: 0;
     top: 0;
     bottom: 0;
+    width: 4rem;
 }
 
 .media-group:first-child :where(.next, .previous) {
@@ -470,6 +483,7 @@ nav ul li:hover {
     header {
         padding: 0;
     }
+
     .hero-btns {
         position: absolute;
         bottom: -70px;
