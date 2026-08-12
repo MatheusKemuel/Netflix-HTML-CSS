@@ -310,9 +310,6 @@ nav ul li:hover {
     overflow: visible;
 }
 
-.media-viewport {
-    overflow: hidden;
-}
 
 .media-scroller {
     display: grid;
@@ -330,12 +327,18 @@ nav ul li:hover {
     grid-auto-flow: column;
     grid-auto-columns: 20%;
     gap: 0.25rem;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.media-scroller:not(:has(.media-group:target)) .media-group:first-child {
-    position: relative;
+.media-scroller:not(:has(.media-group:target))
+.media-group:first-child,
+
+.media-group:target {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
 }
 
 .media-group:target {
@@ -356,12 +359,9 @@ nav ul li:hover {
 
 .media-card:hover .media-element {
     position: absolute;
-
     width: 140%;
-
     left: -20%;
     top: -20%;
-
     z-index: 100;
 
     box-shadow: 0 15px 40px rgba(0, 0, 0, .7);
@@ -410,21 +410,18 @@ nav ul li:hover {
     padding: 1rem;
     background: rgba(0, 0, 0, .15);
     opacity: 0;
-    z-index: 101;
+    z-index: 200;
+    width: 4rem;
 }
 
 .previous {
     left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4rem;
+    
 }
 
 .next {
     right: 0;
-    top: 0;
-    bottom: 0;
-    width: 4rem;
+    
 }
 
 .media-group:first-child :where(.next, .previous) {
