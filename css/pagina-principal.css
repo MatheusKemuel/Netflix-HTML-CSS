@@ -346,7 +346,6 @@ nav ul li:hover {
 
     gap: 0.35rem;
     position: relative;
-    scroll-snap-align: start;
     overflow: visible;
 }
 
@@ -493,69 +492,73 @@ nav ul li:hover {
 
 .next,
 .previous {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
+
     position: absolute;
     top: 0;
     bottom: 0;
+
     width: 3rem;
     padding: 1rem;
-    background:
-        rgb(0 0 0 / 0);
+
+    color: white;
+    background: rgba(0, 0, 0, 0);
 
     opacity: 0;
-    z-index: 200;
+    z-index: 300;
+
     transition:
         opacity 0.2s ease,
         background-color 0.2s ease;
 }
 
-
 .previous {
     left: 0;
 }
-
 
 .next {
     right: 0;
 }
 
-
-.media-group:first-child:where(.next, .previous) {
-    display: flex;
-}
-
-
-.media-scroller:hover:where(.next, .previous) {
+.media-container:hover .next,
+.media-container:hover .previous {
     opacity: 1;
 }
 
-
-:where(.next, .previous):hover {
-    background:
-        rgb(0 0 0 / 0.45);
+.next:hover,
+.previous:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
-
-:where(.next, .previous)>svg {
-    width: 100%;
-
-    transition:
-        transform 75ms linear;
+.next svg,
+.previous svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: white;
+    transition: transform 0.2s ease;
 }
 
-:where(.next, .previous):hover>svg {
+.next:hover svg,
+.previous:hover svg {
     transform: scale(1.2);
 }
 
-.media-group:target:where(.next, .previous) {
-    display: flex;
+.media-group:not(:target):not(:first-child) .next,
+.media-group:not(:target):not(:first-child) .previous {
+    pointer-events: none;
 }
 
+.media-group:first-child .next,
+.media-group:first-child .previous {
+    pointer-events: auto;
+}
 
-.media-scroller:has( :target:not(:first-child)) .media-group:first-of-type .next {
-    display: none;
+.media-group:target .next,
+.media-group:target .previous {
+    pointer-events: auto;
 }
 
 .navigation-indicators {
