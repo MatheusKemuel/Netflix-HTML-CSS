@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../css/watch.css">
     <title>Document</title>
 </head>
 
@@ -180,127 +180,144 @@
             </div>
     </header>
 
-    <section>
-        <div class="banner">
-            <article class="banner-info">
-                <figure class="banner-wrapper">
-                    <img src="../assets/images/movie-name.png" alt="">
-                </figure>
+    <section class="player">
 
-                <ul class="banner-movie-info">
-                    <li>2017</li>
-                    <li>59 min</li>
-                    <li>Ação, Aventura, Drama</li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-                            viewBox="0 0 48 48">
-                            <rect width="36" height="36" x="6" y="6" fill="#f5a200"></rect>
-                            <polygon fill="#fabe5d" points="41.875,6 36.085,6 6,28.623 6,32.976"></polygon>
-                            <polygon fill="#fabe5d" points="32.758,6 26.969,6 6,21.768 6,26.121"></polygon>
-                            <polygon fill="#fabe5d" points="14.526,6 8.736,6 6,8.058 6,12.411"></polygon>
-                            <polygon fill="#fabe5d" points="42,12.76 42,8.407 6,35.478 6,39.831"></polygon>
-                            <polygon fill="#fabe5d" points="23.642,6 17.853,6 6,14.913 6,19.266"></polygon>
-                            <polygon fill="#fabe5d" points="42,19.616 42,15.262 6.443,42 12.232,42"></polygon>
-                            <polygon fill="#fabe5d" points="42,33.326 42,28.972 24.675,42 30.465,42"></polygon>
-                            <polygon fill="#fabe5d" points="42,40.181 42,35.828 33.791,42 39.58,42"></polygon>
-                            <polygon fill="#fabe5d" points="42,26.47 42,22.117 15.559,42 21.348,42"></polygon>
-                            <g>
-                                <path fill="#fff"
-                                    d="M18.42,10.826l-4.356,0c-0.649,2.389-2.333,3.496-4.835,3.59v3.207l3.638-0.048v19.293h5.553V10.826 z">
-                                </path>
-                            </g>
-                            <g>
-                                <path fill="#fff"
-                                    d="M37.936,27.198c-0.255-8.585-6.798-7.468-8.617-5.17c0,0,0.064-1.117,0.064-4.245 c0-3.064,3.064-2.521,3.064-0.734l0,1.404c0,0,3.223,0,5.234,0c0.009-1.116-0.028-2.184-0.223-3 c-1.053-4.404-5.617-4.596-5.617-4.596s-0.925,0-1.468,0c-6.191,0-6.798,6.798-6.798,9c0,0,0,5.84,0,7.851 c-0.141,10.025,6.303,9.511,6.686,9.511c0,0,0.527,0,1.293,0c6.75,0,6.383-7.34,6.383-7.34S37.968,28.507,37.936,27.198z M30.963,32.368c-0.925,0-1.676-0.798-1.676-3.511c0-2.585,0.75-3.511,1.676-3.511s1.676,0.957,1.676,3.511 C32.638,31.571,31.888,32.368,30.963,32.368z">
-                                </path>
-                            </g>
-                        </svg>
-                    </li>
-                </ul>
+        <img src="../assets/images/banner-background.png" alt="Cena do filme" class="player-bg">
 
-                <p>Um guerreiro saxão criado por vikings busca <br> seu lugar entre dois mundos em conflito e<br> luta
-                    para recuperar sua terra natal.</p>
+        <div class="player-overlay"></div>
 
-                <div class="banner-btns">
-                    <a href="./watch.html" class="watch-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="black" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
+        <div class="player-top ">
+            <a href="./details.html" class="back-btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left">
+                    <path d="m15 18-6-6 6-6" />
+                </svg></a>
+
+            <div class="player-title">
+                <h1>The Last Kingdom</h1>
+                <p>Temporada 1, Episódio 1</p>
+            </div>
+
+            <div class="top-controls">
+
+                <button><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-settings-icon lucide-settings">
+                        <path
+                            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg></button>
+
+            </div>
+        </div>
+
+        <div class="player-center">
+
+
+            <button class="play-main">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-play-icon lucide-play">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                </svg>
+            </button>
+
+
+
+        </div>
+
+        <div class="player-bottom">
+
+            <div class="progress-area">
+
+                <span>24:37</span>
+
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="progress-point"></div>
+                </div>
+
+                <span>58:46</span>
+
+            </div>
+
+            <div class="bottom-controls">
+
+                <div class="controls-left">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-play-icon lucide-play">
                             <path
                                 d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
-                        </svg>Assistir</a>
-                    <a href="" class="mylist-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
-                            <path d="M5 12h14" />
-                            <path d="M12 5v14" />
-                        </svg>Minha lista</a>
+                        </svg>
+                    </button>
+
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-volume2-icon lucide-volume-2">
+                            <path
+                                d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+                            <path d="M16 9a5 5 0 0 1 0 6" />
+                            <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
+                        </svg>
+                    </button>
                 </div>
-            </article>
+
+                <div class="controls-right">
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-maximize-icon lucide-maximize">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+                            <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+                            <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+                            <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+                        </svg></button>
+                </div>
+
+            </div>
+
         </div>
     </section>
-
-    <section class="movie-info">
-        <figure>
-            <img src="../assets/images/poster-details.png" alt="">
-        </figure>
-        <aside>
-            <h2>O Último Reino</h2>
-            <p>Um guerreiro saxão criado por vikings busca seu lugar entre dois <br> mundos em conflito e luta para
-                recuperar
-                sua terra natal. Baseado<br> nos romances de Bernard Cornwell.</p>
-
-            <dl>
-                <dt>Diretor:</dt>
-                <dd>Ed Banzalgette</dd>
-
-                <dt>Elenco:</dt>
-                <dd>Alexander Dreymon, Emily Cox, David Dawson, Ian Hart, Mark Rowley</dd>
-
-                <dt>Gênero:</dt>
-                <dd>Ação, Aventura, Drama</dd>
-
-                <dt>Ano de lançamento:</dt>
-                <dd>2017</dd>
-
-                <dt>Duração:</dt>
-                <dd>59min</dd>
-
-                <dt>Classificação</dt>
-                <dd><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
-                        <rect width="36" height="36" x="6" y="6" fill="#f5a200"></rect>
-                        <polygon fill="#fabe5d" points="41.875,6 36.085,6 6,28.623 6,32.976"></polygon>
-                        <polygon fill="#fabe5d" points="32.758,6 26.969,6 6,21.768 6,26.121"></polygon>
-                        <polygon fill="#fabe5d" points="14.526,6 8.736,6 6,8.058 6,12.411"></polygon>
-                        <polygon fill="#fabe5d" points="42,12.76 42,8.407 6,35.478 6,39.831"></polygon>
-                        <polygon fill="#fabe5d" points="23.642,6 17.853,6 6,14.913 6,19.266"></polygon>
-                        <polygon fill="#fabe5d" points="42,19.616 42,15.262 6.443,42 12.232,42"></polygon>
-                        <polygon fill="#fabe5d" points="42,33.326 42,28.972 24.675,42 30.465,42"></polygon>
-                        <polygon fill="#fabe5d" points="42,40.181 42,35.828 33.791,42 39.58,42"></polygon>
-                        <polygon fill="#fabe5d" points="42,26.47 42,22.117 15.559,42 21.348,42"></polygon>
-                        <g>
-                            <path fill="#fff"
-                                d="M18.42,10.826l-4.356,0c-0.649,2.389-2.333,3.496-4.835,3.59v3.207l3.638-0.048v19.293h5.553V10.826 z">
-                            </path>
-                        </g>
-                        <g>
-                            <path fill="#fff"
-                                d="M37.936,27.198c-0.255-8.585-6.798-7.468-8.617-5.17c0,0,0.064-1.117,0.064-4.245 c0-3.064,3.064-2.521,3.064-0.734l0,1.404c0,0,3.223,0,5.234,0c0.009-1.116-0.028-2.184-0.223-3 c-1.053-4.404-5.617-4.596-5.617-4.596s-0.925,0-1.468,0c-6.191,0-6.798,6.798-6.798,9c0,0,0,5.84,0,7.851 c-0.141,10.025,6.303,9.511,6.686,9.511c0,0,0.527,0,1.293,0c6.75,0,6.383-7.34,6.383-7.34S37.968,28.507,37.936,27.198z M30.963,32.368c-0.925,0-1.676-0.798-1.676-3.511c0-2.585,0.75-3.511,1.676-3.511s1.676,0.957,1.676,3.511 C32.638,31.571,31.888,32.368,30.963,32.368z">
-                            </path>
-                        </g>
-                    </svg> Violência, Linguagem Imprópria</dd>
-            </dl>
-            <a href="./pagina-principal.html" class="btn-voltar"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-left-icon lucide-chevron-left">
-                    <path d="m15 18-6-6 6-6" />
-                </svg>Voltar</a>
-        </aside>
+    <section class="movie-desc">
+        <h2>The Last Kingdom</h2>
+        <p>Um guerreiro saxão criado por vikings busca seu lugar entre dois
+            mundos em conflito e luta para recuperar sua terra natal. Baseado
+            nos romances de Bernard Cornwell.</p>
+        <ul class="banner-movie-info">
+            <li>2017</li>
+            <li>59 min</li>
+            <li>Ação, Aventura, Drama</li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
+                    <rect width="36" height="36" x="6" y="6" fill="#f5a200"></rect>
+                    <polygon fill="#fabe5d" points="41.875,6 36.085,6 6,28.623 6,32.976"></polygon>
+                    <polygon fill="#fabe5d" points="32.758,6 26.969,6 6,21.768 6,26.121"></polygon>
+                    <polygon fill="#fabe5d" points="14.526,6 8.736,6 6,8.058 6,12.411"></polygon>
+                    <polygon fill="#fabe5d" points="42,12.76 42,8.407 6,35.478 6,39.831"></polygon>
+                    <polygon fill="#fabe5d" points="23.642,6 17.853,6 6,14.913 6,19.266"></polygon>
+                    <polygon fill="#fabe5d" points="42,19.616 42,15.262 6.443,42 12.232,42"></polygon>
+                    <polygon fill="#fabe5d" points="42,33.326 42,28.972 24.675,42 30.465,42"></polygon>
+                    <polygon fill="#fabe5d" points="42,40.181 42,35.828 33.791,42 39.58,42"></polygon>
+                    <polygon fill="#fabe5d" points="42,26.47 42,22.117 15.559,42 21.348,42"></polygon>
+                    <g>
+                        <path fill="#fff"
+                            d="M18.42,10.826l-4.356,0c-0.649,2.389-2.333,3.496-4.835,3.59v3.207l3.638-0.048v19.293h5.553V10.826 z">
+                        </path>
+                    </g>
+                    <g>
+                        <path fill="#fff"
+                            d="M37.936,27.198c-0.255-8.585-6.798-7.468-8.617-5.17c0,0,0.064-1.117,0.064-4.245 c0-3.064,3.064-2.521,3.064-0.734l0,1.404c0,0,3.223,0,5.234,0c0.009-1.116-0.028-2.184-0.223-3 c-1.053-4.404-5.617-4.596-5.617-4.596s-0.925,0-1.468,0c-6.191,0-6.798,6.798-6.798,9c0,0,0,5.84,0,7.851 c-0.141,10.025,6.303,9.511,6.686,9.511c0,0,0.527,0,1.293,0c6.75,0,6.383-7.34,6.383-7.34S37.968,28.507,37.936,27.198z M30.963,32.368c-0.925,0-1.676-0.798-1.676-3.511c0-2.585,0.75-3.511,1.676-3.511s1.676,0.957,1.676,3.511 C32.638,31.571,31.888,32.368,30.963,32.368z">
+                        </path>
+                    </g>
+                </svg>
+            </li>
+        </ul>
     </section>
-
     <section class="recommended">
         <div class="trending-content">
-            <h2>Você também pode gostar</h2>
+            <h2>Mais conteúdo para assistir</h2>
             <div class="movies">
                 <article class="movie">
                     <a href="#">
