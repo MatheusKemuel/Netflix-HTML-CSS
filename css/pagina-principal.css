@@ -348,12 +348,15 @@ nav ul li:hover {
 }
 
 .media-element {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.25rem;
+      position: relative;
+
+    overflow: visible;
+
     background-color: #181818;
+
     transform: scale(1);
     transform-origin: center;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -364,6 +367,7 @@ nav ul li:hover {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    border-radius: 0.25rem;
 }
 
 @media (hover: hover) {
@@ -389,19 +393,36 @@ nav ul li:hover {
 
 
 .media-info {
+ position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
     padding: 12px;
+
     background-color: #181818;
+
     opacity: 0;
-    max-height: 0;
-    overflow: hidden;
+    visibility: hidden;
+
+    border-radius:
+        0 0
+        0.25rem 0.25rem;
+
+    box-shadow:
+        0 15px 30px
+        rgba(0, 0, 0, 0.5);
+
     transition:
         opacity 0.2s ease,
-        max-height 0.25s ease;
+        visibility 0.2s ease;
 }
 
 .media-card:hover .media-info {
     opacity: 1;
-    max-height: 120px;
+    max-height: visible;
 }
 
 .media-info h3 {
