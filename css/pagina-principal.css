@@ -341,9 +341,8 @@ nav ul li:hover {
 
 .media-group {
     display: grid;
-    grid-template-columns:
-        repeat(5, minmax(0, 1fr));
-
+    grid-auto-flow: column;
+    grid-auto-columns: 20%;
     gap: 0.35rem;
     position: relative;
     overflow: visible;
@@ -379,7 +378,7 @@ nav ul li:hover {
 
 
 .media-element img {
-    display: block;
+
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -604,6 +603,7 @@ nav ul li:hover {
 .media-group:nth-child(2):target~.navigation-indicators>div:nth-child(2) {
     opacity: 1;
 }
+
 .media-group:nth-child(3):target~.navigation-indicators>div:nth-child(3) {
     opacity: 1;
 }
@@ -617,16 +617,18 @@ nav ul li:hover {
     .center-section h2 {
         padding-inline: 2.5rem;
     }
+
     .media-scroller {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
 
         scroll-padding-inline: 2.5rem;
     }
+
     .media-group {
-        grid-template-columns:
-            repeat(4, minmax(0, 1fr));
+        grid-auto-columns: 25%;
     }
+
     .next,
     .previous {
         width: 2.5rem;
@@ -643,9 +645,9 @@ nav ul li:hover {
     }
 
     .media-group {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
+        grid-auto-columns: 33.333%;
     }
+
     .media-scroller {
         padding-bottom: 120px;
 
@@ -690,8 +692,7 @@ nav ul li:hover {
 @media (max-width: 600px) {
 
     .media-group {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-auto-columns: 50%;
     }
 }
 
@@ -716,6 +717,10 @@ nav ul li:hover {
 
     .navigation-indicators {
         right: 1.5rem;
+    }
+
+    .media-group {
+        grid-auto-columns: 70%;
     }
 }
 
@@ -790,6 +795,7 @@ nav ul li:hover {
         border-radius: 20px;
         max-width: 1000px;
     }
+
     .hero-content {
         margin: 100px 50px;
     }
